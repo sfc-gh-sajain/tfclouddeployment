@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     snowflake = {
-      source = "Snowflake-Labs/snowflake"
-      version = "0.55.1"
+      source  = "chanzuckerberg/snowflake"
+      version = "0.25.17"
     }
   }
 
@@ -31,15 +31,12 @@ resource "snowflake_schema" "demo_schema" {
 
 resource "snowflake_database" "PROD_AP_PL_DC_DB_DB" {
   name = "PROD_AP_PL_DC_DB_DB"
-  is_transient = false
 }
 
 resource "snowflake_database" "PROD_AP_RL_DC_DB_DB" {
   name = "PROD_AP_RL_DC_DB_DB"
-  is_transient = false
 }
 
 resource "snowflake_database" "PROD_AP_SL_DC_DB_DB" {
   name = "PROD_AP_SL_DC_DB_DB"
-  is_transient = false
 }
