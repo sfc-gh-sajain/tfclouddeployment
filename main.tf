@@ -29,17 +29,17 @@ resource "snowflake_schema" "demo_schema" {
   comment  = "Schema for Snowflake Terraform demo"
 }
 
-resource snowflake_database PROD_AP_PL_DC_DB_DB {
+resource "snowflake_database" "PROD_AP_PL_DC_DB_DB" {
   name = "PROD_AP_PL_DC_DB_DB"
   is_transient = false
 }
 
-resource snowflake_database PROD_AP_RL_DC_DB_DB {
+resource "snowflake_database" "PROD_AP_RL_DC_DB_DB" {
   name = "PROD_AP_RL_DC_DB_DB"
   is_transient = false
 }
 
-resource snowflake_database PROD_AP_SL_DC_DB_DB {
+resource "snowflake_database" "PROD_AP_SL_DC_DB_DB" {
   name = "PROD_AP_SL_DC_DB_DB"
   is_transient = false
 }
