@@ -95,6 +95,11 @@ resource snowflake_warehouse PROD_REPORTING_WH_WH {
   auto_resume = true
 }
 
+provider "snowflake" {
+  role     = "ACCOUNTADMIN"
+}
+
+
 resource snowflake_role PROD_AP_PL_DC_DB_DB_BANKCORE_EXTRACT_DNA_R_AR {
   name = "PROD_AP_PL_DC_DB_DB_BANKCORE_EXTRACT_DNA_R_AR"
 }
