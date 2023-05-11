@@ -2166,3 +2166,55 @@ resource snowflake_database_grant grant_ownership_on_prod_ap_sl_dc_db_db_databas
   enable_multiple_grants = true
   depends_on = [snowflake_role_grants.role_prod_sysadmin_grants]
 }
+
+resource snowflake_role PROD_ANALYST_FR {
+  name = "PROD_ANALYST_FR"
+}
+
+resource snowflake_role_grants role_prod_analyst_fr_grants {
+  role_name = snowflake_role.PROD_ANALYST_FR.name
+
+  enable_multiple_grants = true
+  roles = [
+    snowflake_role.PROD_SYSADMIN.name,
+  ]
+}
+
+resource snowflake_role PROD_DEVELOPER_FR {
+  name = "PROD_DEVELOPER_FR"
+}
+
+resource snowflake_role_grants role_prod_developer_fr_grants {
+  role_name = snowflake_role.PROD_DEVELOPER_FR.name
+
+  enable_multiple_grants = true
+  roles = [
+    snowflake_role.PROD_SYSADMIN.name,
+  ]
+}
+
+resource snowflake_role PROD_REPORTING_FR {
+  name = "PROD_REPORTING_FR"
+}
+
+resource snowflake_role_grants role_prod_reporting_fr_grants {
+  role_name = snowflake_role.PROD_REPORTING_FR.name
+
+  enable_multiple_grants = true
+  roles = [
+    snowflake_role.PROD_SYSADMIN.name,
+  ]
+}
+
+resource snowflake_role PROD_SERVICE_FR {
+  name = "PROD_SERVICE_FR"
+}
+
+resource snowflake_role_grants role_prod_service_fr_grants {
+  role_name = snowflake_role.PROD_SERVICE_FR.name
+
+  enable_multiple_grants = true
+  roles = [
+    snowflake_role.PROD_SYSADMIN.name,
+  ]
+}
