@@ -16,7 +16,6 @@ terraform {
 }
 
 provider "snowflake" {
-  X
 }
 
 resource "snowflake_database" "demo_new_db" {
