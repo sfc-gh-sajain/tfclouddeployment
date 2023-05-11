@@ -16,6 +16,7 @@ terraform {
 }
 
 provider "snowflake" {
+    role     = "ACCOUNTADMIN"
 }
 
 resource "snowflake_database" "demo_new_db" {
@@ -94,11 +95,6 @@ resource snowflake_warehouse PROD_REPORTING_WH_WH {
   auto_suspend = 600
   auto_resume = true
 }
-
-provider "snowflake" {
-  role     = "ACCOUNTADMIN"
-}
-
 
 resource snowflake_role PROD_AP_PL_DC_DB_DB_BANKCORE_EXTRACT_DNA_R_AR {
   name = "PROD_AP_PL_DC_DB_DB_BANKCORE_EXTRACT_DNA_R_AR"
