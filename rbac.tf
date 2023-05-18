@@ -1363,60 +1363,6 @@ resource snowflake_stream_grant grant_ownership_on_future_prod_ap_sl_dc_db_prod_
   depends_on = [snowflake_schema_grant.grant_ownership_on_prod_ap_sl_dc_db_bankcore_extract_dna_schema]
 }
 
-module "PROD_AP_PL_DC_DB__BANKCORE_EXTRACT_DNA_grant_USAGE_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_PL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_PL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "USAGE"
-  roles = [snowflake_role.PROD_AP_PL_DC_DB_BANKCORE_EXTRACT_DNA_R_AR.name, snowflake_role.PROD_AP_PL_DC_DB_BANKCORE_EXTRACT_DNA_RW_AR.name, snowflake_role.PROD_AP_PL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
-module "PROD_AP_PL_DC_DB__BANKCORE_EXTRACT_DNA_grant_OWNERSHIP_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_PL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_PL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "OWNERSHIP"
-  roles = [snowflake_role.PROD_AP_PL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
-module "PROD_AP_RL_DC_DB__BANKCORE_EXTRACT_DNA_grant_USAGE_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_RL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_RL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "USAGE"
-  roles = [snowflake_role.PROD_AP_RL_DC_DB_BANKCORE_EXTRACT_DNA_R_AR.name, snowflake_role.PROD_AP_RL_DC_DB_BANKCORE_EXTRACT_DNA_RW_AR.name, snowflake_role.PROD_AP_RL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
-module "PROD_AP_RL_DC_DB__BANKCORE_EXTRACT_DNA_grant_OWNERSHIP_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_RL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_RL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "OWNERSHIP"
-  roles = [snowflake_role.PROD_AP_RL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
-module "PROD_AP_SL_DC_DB__BANKCORE_EXTRACT_DNA_grant_USAGE_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_SL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_SL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "USAGE"
-  roles = [snowflake_role.PROD_AP_SL_DC_DB_BANKCORE_EXTRACT_DNA_R_AR.name, snowflake_role.PROD_AP_SL_DC_DB_BANKCORE_EXTRACT_DNA_RW_AR.name, snowflake_role.PROD_AP_SL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
-module "PROD_AP_SL_DC_DB__BANKCORE_EXTRACT_DNA_grant_OWNERSHIP_on_current_procedures" {
-  source = "./modules/snowflake-grant-all-current-procedures"
-  database_name = snowflake_database.PROD_AP_SL_DC_DB.name
-  schema_name = snowflake_schema.PROD_AP_SL_DC_DB__BANKCORE_EXTRACT_DNA.name
-  privilege = "OWNERSHIP"
-  roles = [snowflake_role.PROD_AP_SL_DC_DB_BANKCORE_EXTRACT_DNA_FULL_AR.name]
-  enable_multiple_grants = true
-}
-
 module "PROD_AP_PL_DC_DB__BANKCORE_EXTRACT_DNA_grant_USAGE_on_current_functions" {
   source = "./modules/snowflake-grant-all-current-functions"
   database_name = snowflake_database.PROD_AP_PL_DC_DB.name
